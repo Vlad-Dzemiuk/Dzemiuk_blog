@@ -27,9 +27,13 @@ Route::group([ 'namespace' => 'App\Http\Controllers\Blog', 'prefix' => 'blog'], 
 Route::group(['prefix' => 'digging_deeper'], function () {
 
     Route::get('collections', [DiggingDeeperController::class, 'collections'])
-
         ->name('digging_deeper.collections');
 
+    Route::get('process-video', 'DiggingDeeperController@processVideo')
+        ->name('digging_deeper.processVideo');
+
+    Route::get('prepare-catalog', 'DiggingDeeperController@prepareCatalog')
+        ->name('digging_deeper.prepareCatalog');
 });
 
 //Адмінка
